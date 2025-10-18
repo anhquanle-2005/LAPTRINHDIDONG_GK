@@ -82,7 +82,7 @@
                 tools:text="Lịch đổi gần nhất: "
                 tools:visibility="visible"/>
         </LinearLayout>
-        
+
     </androidx.cardview.widget.CardView>
 
     <Button

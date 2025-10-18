@@ -59,8 +59,6 @@
                     android:focusable="false"
                     android:textStyle="bold"/>
             </com.google.android.material.textfield.TextInputLayout>
-
-
             <Button
                 android:id="@+id/btn_convert_calendar"
                 android:layout_width="match_parent"
