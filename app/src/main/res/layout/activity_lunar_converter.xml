@@ -2,17 +2,16 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".LunarConverterActivity">
 
     <TextView
-        android:id="@+id/tv_title_temp"
+        android:id="@+id/tv_title_calendar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="CHUYỂN ĐỔI NHIỆT ĐỘ"
+        android:text="CHUYỂN ĐỔI NĂM"
         android:textColor="@color/black"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -28,7 +27,7 @@
         app:cardElevation="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_title_temp">
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_calendar">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -36,40 +35,39 @@
             android:orientation="vertical"
             android:padding="24dp">
 
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Nhập năm dương lịch">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edt_nam_duong_lich"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:maxLength="4"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:hint="Nhập Độ C">
-
+                android:hint="Năm âm lịch">
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edt_celsius"
+                    android:id="@+id/edt_nam_am_lich"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="numberDecimal|numberSigned"/>
+                    android:focusable="false"
+                    android:textStyle="bold"/>
             </com.google.android.material.textfield.TextInputLayout>
 
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:hint="Kết quả độ F">
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edt_fahrenheit"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:focusable="false"
-                        android:textStyle="bold"/>
-                </com.google.android.material.textfield.TextInputLayout>
-
             <Button
-                android:id="@+id/btn_convert_temp"
+                android:id="@+id/btn_convert_calendar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:padding="12dp"
-                android:text="Chuyển đổi C -> F"
+                android:text="Chuyển đổi và quay về"
                 android:textSize="16sp"/>
 
             <TextView
@@ -78,21 +76,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:gravity="center"
+                android:textColor="#009688"
+                android:textSize="16sp"
                 android:visibility="gone"
                 tools:text="Lịch đổi gần nhất: "
                 tools:visibility="visible"/>
         </LinearLayout>
-        
     </androidx.cardview.widget.CardView>
-
-    <Button
-        android:id="@+id/btn_go_to_lunar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="24dp"
-        android:text="Chuyển đổi sang màn hình đổi năm"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
